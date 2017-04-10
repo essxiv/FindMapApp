@@ -1,0 +1,21 @@
+{
+  "name": "map_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angularjs": "0.0.1",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.3.0",
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.3",
+    "morgan": "^1.8.1"
+  }
+}

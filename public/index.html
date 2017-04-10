@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js" ng-app="meanMapApp">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Google Map</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body ng-controller="addCtrl">
+
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li active><a href="">eXe</a></li>
+                </ul>
+                <h3 class="text-muted">Google Map Geolocation API</h3>
+            </div>
+            <div class="row content">
+                <div class="col-md-7">
+                    <div id="map" style="width:645px; height:645px"></div>
+                </div>
+                <div class="col-md-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title text-center">Where Are You? <span class="glyphicon glyphicon-map-marker"></span></h2>
+                        </div>
+                        <div class="panel-body">
+                            <form name ="addForm" novalidate>
+                                <div class="form-group">
+                                    <label for="username">Username <span class="badge">All fields required</span></label>
+                                    <input type="text" class="form-control" id="username" placeholder="Username" ng-model="formData.username" required>
+                                </div>
+                                <label class="radio control-label">Gender</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="radiomale" value="Male" ng-model="formData.gender">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="radio" required>
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="radiofemale" value="Female" ng-model="formData.gender">
+                                        Female
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="radioother" value="Decline To Answer" ng-model="formData.gender">
+                                        Decline To Answer
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="age">Age</label>
+                                    <input type="number" class="form-control" id="age" placeholder="" ng-model="formData.age" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="language">Favorite Food</label>
+                                    <input type="text" class="form-control" id="language" placeholder="Sushi, Pizza, Tacos, Ect..." ng-model="formData.favlang" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="latitude">Latitude</label>
+                                    <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="longitude">Longitude</label>
+                                    <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="verified">HTML5 Verified Location? <span><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
+                                    <input type="text" class="form-control" id="verified" placeholder= "" ng-model="formData.htmlverified" readonly>
+                                </div>
+
+                                <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+
+            <div class="footer">
+                <p class="text-center"><span class="glyphicon glyphicon-check"></span>essxiv
+            </div>
+        </div>
+
+        <!-- JS Libraries -->
+        <script src="../bower_components/holderjs/holder.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHmCuq9tiq_-5KMId2tNyWgUEVXQiQ0yg"></script>
+
+        <script src="../bower_components/modernizr/bin/modernizr"></script>
+
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-route/angular-route.js"></script>
+        <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    </body>
+    <script src="js/app.js"></script>
+    <script src="js/gservice.js"></script>
+    <script src="js/addCtrl.js"></script>
+</html>
